@@ -47,6 +47,21 @@ public class PageController : MonoBehaviour
 			{
 				PlayAnimation(currentObj,"INTRO"); //TOCA A INTRO
 			}
+			else if (GetLayerName(currentObj) == "TYPE4")
+			{
+				if(IsOnState(currentObj,"WAIT")) // ESTÁ NO WAIT
+				{
+					PlayAnimation(currentObj,"INTRO"); // TOCA A INTRO
+				}
+				else if(IsOnState(currentObj,"CYCLE")) // ESTÁ NO CYCLE1
+				{
+					SetTrigger(currentObj,"TOINTRO2"); //VAI PRA INTRO2
+				}
+				else if(IsOnState(currentObj,"CYCLE2")) // ESTÁ NO CYCLE2
+				{
+					SetTrigger(currentObj,"TOEND"); //VAI PRO END
+				}
+			}
 		}
 	}
 
