@@ -25,6 +25,10 @@ public class ComicController : MonoBehaviour
             {
                 AddToIndex();
                 internalCount = 0;
+            }            
+            else if (IsOnState(currentAnimator, "WAIT"))
+            {
+                SetTrigger(currentAnimator, "WAIT");
             }
             else if (IsOnState(currentAnimator, "CYCLE" + internalCount))
             {

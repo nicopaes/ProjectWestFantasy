@@ -740,9 +740,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd499dfc8cc3db2419689c590895fd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimatorList: []
+  AnimatorList:
+  - {fileID: 1357362769}
   currentAnimator: {fileID: 0}
-  currentIndex: -1
+  currentIndex: 0
+  internalCount: 0
   isSafeToSkip: 1
 --- !u!4 &1151451536
 Transform:
