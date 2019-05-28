@@ -1603,6 +1603,7 @@ MonoBehaviour:
   AnimatorList:
   - {fileID: 1357362769}
   - {fileID: 627726673}
+  - {fileID: 1970293916}
   currentAnimator: {fileID: 0}
   currentIndex: 0
   internalCount: 0
