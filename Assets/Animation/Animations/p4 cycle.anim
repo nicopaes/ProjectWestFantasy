@@ -25,11 +25,39 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
+      - serializedVersion: 2
+        time: 4.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
     path: q unico
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.5
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: "q unico/ca\xE7adora pf"
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
@@ -70,6 +98,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: cf0cd15d711dde04c9790f574aaf5488, type: 3}
     - time: 4.25
       value: {fileID: 21300000, guid: cf0cd15d711dde04c9790f574aaf5488, type: 3}
+    - time: 4.5
+      value: {fileID: 21300000, guid: 1b9d2e0ce1f8b3d458fe9083da1102f3, type: 3}
     attribute: m_Sprite
     path: q unico/p4-fundo_0000_Quadro-12
     classID: 212
@@ -111,6 +141,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: c3d9ba07a6deb8a4d83936e961a6f344, type: 3}
     - time: 4.25
       value: {fileID: 21300000, guid: 9675bf30e8957e34f9617abd389bebf8, type: 3}
+    - time: 4.5
+      value: {fileID: 21300000, guid: d8ace7ae76337ad4698aedfd819f5ad7, type: 3}
     attribute: m_Sprite
     path: q unico/p4 q 1 ela 0
     classID: 212
@@ -124,6 +156,13 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 4006566490
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2440289893
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -162,6 +201,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 6799a92c4118bf24995b7fe49a6fc456, type: 3}
     - {fileID: 21300000, guid: cf0cd15d711dde04c9790f574aaf5488, type: 3}
     - {fileID: 21300000, guid: cf0cd15d711dde04c9790f574aaf5488, type: 3}
+    - {fileID: 21300000, guid: 1b9d2e0ce1f8b3d458fe9083da1102f3, type: 3}
     - {fileID: 21300000, guid: d8ace7ae76337ad4698aedfd819f5ad7, type: 3}
     - {fileID: 21300000, guid: c3d9ba07a6deb8a4d83936e961a6f344, type: 3}
     - {fileID: 21300000, guid: 9675bf30e8957e34f9617abd389bebf8, type: 3}
@@ -180,12 +220,13 @@ AnimationClip:
     - {fileID: 21300000, guid: d8ace7ae76337ad4698aedfd819f5ad7, type: 3}
     - {fileID: 21300000, guid: c3d9ba07a6deb8a4d83936e961a6f344, type: 3}
     - {fileID: 21300000, guid: 9675bf30e8957e34f9617abd389bebf8, type: 3}
+    - {fileID: 21300000, guid: d8ace7ae76337ad4698aedfd819f5ad7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.3333335
+    m_StopTime: 4.5833335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -210,11 +251,39 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
+      - serializedVersion: 2
+        time: 4.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
     path: q unico
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.5
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: "q unico/ca\xE7adora pf"
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
