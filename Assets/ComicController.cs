@@ -10,22 +10,33 @@ public class ComicController : MonoBehaviour
     public Animator currentAnimator;
     public int currentIndex = 0;
 
-	[SerializeField]
+    [SerializeField]
     private int internalCount = 0;
 
-	public bool isSafeToSkip = true;
+    public bool isSafeToSkip = true;
+
+    public GameObject canSkipSprite;
 
     void Update()
     {
+        isSafeToSkip = IsOnState(AnimatorList[currentIndex],"CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT");
+        if (isSafeToSkip)
+        {
+            canSkipSprite.SetActive(true);
+        }
+        else
+        {
+            canSkipSprite.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isSafeToSkip)
         {
             currentAnimator = AnimatorList[currentIndex];
-			Debug.Log(IsOnState(currentAnimator,"END"));
-            if (IsOnState(currentAnimator,"END"))
+            if (IsOnState(currentAnimator, "END"))
             {
                 AddToIndex();
                 internalCount = 0;
-            }            
+            }
             else if (IsOnState(currentAnimator, "WAIT"))
             {
                 SetTrigger(currentAnimator, "WAIT");
@@ -62,5 +73,4 @@ public class ComicController : MonoBehaviour
     {
         if (currentIndex < AnimatorList.Count - 1) currentIndex++;
     }
-
 }
