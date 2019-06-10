@@ -294,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 141007287}
   - component: {fileID: 141007288}
+  - component: {fileID: 141007289}
   m_Layer: 0
   m_Name: CANSKIP
   m_TagString: Untagged
@@ -356,6 +357,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &141007289
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141007286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a03df32981bff41429154de4141ce2b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &191696010
 GameObject:
   m_ObjectHideFlags: 0

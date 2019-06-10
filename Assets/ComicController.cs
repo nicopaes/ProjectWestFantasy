@@ -19,7 +19,7 @@ public class ComicController : MonoBehaviour
 
     void Update()
     {
-        isSafeToSkip = IsOnState(AnimatorList[currentIndex],"CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT");
+        isSafeToSkip = IsOnState(AnimatorList[currentIndex], "CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT");
         if (isSafeToSkip)
         {
             canSkipSprite.SetActive(true);
@@ -33,9 +33,11 @@ public class ComicController : MonoBehaviour
         {
             currentAnimator = AnimatorList[currentIndex];
             if (IsOnState(currentAnimator, "END"))
-            {
+            {                
                 AddToIndex();
                 internalCount = 0;
+                currentAnimator = AnimatorList[currentIndex];
+                SetTrigger(currentAnimator, "WAIT");
             }
             else if (IsOnState(currentAnimator, "WAIT"))
             {
