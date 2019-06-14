@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: CANSKIP
+    uniqueID: 2527676101
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -47,6 +50,12 @@ TagManager:
   - name: pag 2
     uniqueID: 801931267
     locked: 0
-  - name: CANSKIP
-    uniqueID: 2527676101
+  - name: pag6q1
+    uniqueID: 1522537149
+    locked: 0
+  - name: pag6q2
+    uniqueID: 902052841
+    locked: 0
+  - name: pag6q3
+    uniqueID: 1706352163
     locked: 0
