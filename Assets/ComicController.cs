@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ComicController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class ComicController : MonoBehaviour
 
     public GameObject canSkipSprite;
 
+    public Canvas menuCanvas;
+
     void Update()
     {
         isSafeToSkip = IsOnState(AnimatorList[currentIndex], "CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT");
@@ -29,11 +32,11 @@ public class ComicController : MonoBehaviour
             canSkipSprite.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isSafeToSkip)
+        if (Input.GetKeyDown(KeyCode.Space) && isSafeToSkip && !menuCanvas.gameObject.activeInHierarchy)
         {
             currentAnimator = AnimatorList[currentIndex];
             if (IsOnState(currentAnimator, "END"))
-            {                
+            {
                 AddToIndex();
                 internalCount = 0;
                 currentAnimator = AnimatorList[currentIndex];
@@ -74,5 +77,21 @@ public class ComicController : MonoBehaviour
     void AddToIndex()
     {
         if (currentIndex < AnimatorList.Count - 1) currentIndex++;
+    }
+
+    public void StartIsClicked()
+    {
+        Debug.Log("Start was clicked");
+        menuCanvas.gameObject.SetActive(false);
+        currentAnimator = AnimatorList[currentIndex];
+        if (IsOnState(currentAnimator, "WAIT"))
+        {
+            SetTrigger(currentAnimator, "WAIT");
+        }
+    }
+
+    public void QuitIsClicked()
+    {
+        Application.Quit();
     }
 }
