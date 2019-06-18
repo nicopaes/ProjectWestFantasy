@@ -77,6 +77,12 @@ public class ComicController : MonoBehaviour
     void AddToIndex()
     {
         if (currentIndex < AnimatorList.Count - 1) currentIndex++;
+        else
+        {
+            Debug.Log("END");
+            GameObject canvas = menuCanvas.gameObject;
+            canvas.SetActive(!canvas.activeInHierarchy);
+        }
     }
 
     public void StartIsClicked()
@@ -94,7 +100,7 @@ public class ComicController : MonoBehaviour
     {
         GameObject menu = menuCanvas.transform.Find("Menu").gameObject;
         menu.SetActive(!menu.activeInHierarchy);
-        
+
         GameObject credits = menuCanvas.transform.Find("Credits").gameObject;
         credits.SetActive(!credits.activeInHierarchy);
     }
@@ -103,7 +109,7 @@ public class ComicController : MonoBehaviour
     {
         GameObject menu = menuCanvas.transform.Find("Menu").gameObject;
         menu.SetActive(!menu.activeInHierarchy);
-        
+
         GameObject credits = menuCanvas.transform.Find("Credits").gameObject;
         credits.SetActive(!credits.activeInHierarchy);
     }
