@@ -90,6 +90,24 @@ public class ComicController : MonoBehaviour
         }
     }
 
+    public void OnCreditsClicked()
+    {
+        GameObject menu = menuCanvas.transform.Find("Menu").gameObject;
+        menu.SetActive(!menu.activeInHierarchy);
+        
+        GameObject credits = menuCanvas.transform.Find("Credits").gameObject;
+        credits.SetActive(!credits.activeInHierarchy);
+    }
+
+    public void OnReturnClicked()
+    {
+        GameObject menu = menuCanvas.transform.Find("Menu").gameObject;
+        menu.SetActive(!menu.activeInHierarchy);
+        
+        GameObject credits = menuCanvas.transform.Find("Credits").gameObject;
+        credits.SetActive(!credits.activeInHierarchy);
+    }
+
     public void QuitIsClicked()
     {
         Application.Quit();
