@@ -22,7 +22,7 @@ public class ComicController : MonoBehaviour
 
     void Update()
     {
-        isSafeToSkip = IsOnState(AnimatorList[currentIndex], "CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT");
+        isSafeToSkip = IsOnState(AnimatorList[currentIndex], "CYCLE" + internalCount) || IsOnState(AnimatorList[currentIndex], "END") || IsOnState(AnimatorList[currentIndex], "WAIT") || IsOnState(AnimatorList[currentIndex], "ENDFINAL");
         if (isSafeToSkip)
         {
             canSkipSprite.SetActive(true);
@@ -34,14 +34,11 @@ public class ComicController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isSafeToSkip && !menuCanvas.gameObject.activeInHierarchy)
         {
-            currentAnimator = AnimatorList[currentIndex];/*
-            if (IsOnState(currentAnimator, "END"))
+            currentAnimator = AnimatorList[currentIndex];
+            if (IsOnState(currentAnimator, "ENDFINAL"))
             {
                 AddToIndex();
-                internalCount = 0;
-                currentAnimator = AnimatorList[currentIndex];
-                SetTrigger(currentAnimator, "WAIT");
-            } */
+            } 
             if (IsOnState(currentAnimator, "WAIT"))
             {
                 SetTrigger(currentAnimator, "WAIT");
@@ -52,14 +49,17 @@ public class ComicController : MonoBehaviour
                 internalCount++;
             }
         }
-        else if(!menuCanvas.gameObject.activeInHierarchy)
+        else if (!menuCanvas.gameObject.activeInHierarchy)
         {
             if (IsOnState(currentAnimator, "END"))
             {
-                AddToIndex();
-                internalCount = 0;
-                currentAnimator = AnimatorList[currentIndex];
-                SetTrigger(currentAnimator, "WAIT");
+                if (currentAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+                {
+                    AddToIndex();
+                    internalCount = 0;
+                    currentAnimator = AnimatorList[currentIndex];
+                    SetTrigger(currentAnimator, "WAIT");
+                }
             }
         }
     }
@@ -94,12 +94,20 @@ public class ComicController : MonoBehaviour
             canvas.SetActive(!canvas.activeInHierarchy);
             currentIndex = 0;
             internalCount = 0;
-            foreach(Animator a in AnimatorList)
+            foreach (Animator a in AnimatorList)
             {
                 a.ResetTrigger("WAIT");
                 a.Play("WAIT");
             }
         }
+    }
+
+    void AddToIndexAndPlay()
+    {
+        AddToIndex();
+        internalCount = 0;
+        currentAnimator = AnimatorList[currentIndex];
+        SetTrigger(currentAnimator, "WAIT");
     }
 
     public void StartIsClicked()
