@@ -34,15 +34,15 @@ public class ComicController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isSafeToSkip && !menuCanvas.gameObject.activeInHierarchy)
         {
-            currentAnimator = AnimatorList[currentIndex];
+            currentAnimator = AnimatorList[currentIndex];/*
             if (IsOnState(currentAnimator, "END"))
             {
                 AddToIndex();
                 internalCount = 0;
                 currentAnimator = AnimatorList[currentIndex];
                 SetTrigger(currentAnimator, "WAIT");
-            }
-            else if (IsOnState(currentAnimator, "WAIT"))
+            } */
+            if (IsOnState(currentAnimator, "WAIT"))
             {
                 SetTrigger(currentAnimator, "WAIT");
             }
@@ -50,6 +50,16 @@ public class ComicController : MonoBehaviour
             {
                 SetTrigger(currentAnimator, "CYCLE" + internalCount);
                 internalCount++;
+            }
+        }
+        else if(!menuCanvas.gameObject.activeInHierarchy)
+        {
+            if (IsOnState(currentAnimator, "END"))
+            {
+                AddToIndex();
+                internalCount = 0;
+                currentAnimator = AnimatorList[currentIndex];
+                SetTrigger(currentAnimator, "WAIT");
             }
         }
     }
@@ -82,6 +92,13 @@ public class ComicController : MonoBehaviour
             Debug.Log("END");
             GameObject canvas = menuCanvas.gameObject;
             canvas.SetActive(!canvas.activeInHierarchy);
+            currentIndex = 0;
+            internalCount = 0;
+            foreach(Animator a in AnimatorList)
+            {
+                a.ResetTrigger("WAIT");
+                a.Play("WAIT");
+            }
         }
     }
 
